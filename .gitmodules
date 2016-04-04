@@ -1,0 +1,4 @@
+[submodule "vendor/rubocop"]
+	path = vendor/rubocop
+	url = git://github.com/bbatsov/rubocop.git
+	branch = master

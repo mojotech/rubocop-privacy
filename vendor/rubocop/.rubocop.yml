@@ -1,0 +1,16 @@
+# This is the configuration used to check the rubocop source code.
+
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+  TargetRubyVersion: 1.9
+
+Style/Encoding:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: always

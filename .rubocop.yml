@@ -1,0 +1,12 @@
+# require: rubocop-privacy
+
+AllCops:
+  Exclude:
+    - vendor/**/*
+
+Style/FileName:
+  Exclude:
+    - lib/rubocop-privacy.rb
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19_no_mixed_keys
