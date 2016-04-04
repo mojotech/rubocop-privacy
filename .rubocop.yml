@@ -4,6 +4,14 @@ AllCops:
   Exclude:
     - vendor/**/*
 
+Metrics/AbcSize:
+  Exclude:
+    - spec/**/*
+
+Style/Documentation:
+  Exclude:
+    - spec/**/*
+
 Style/FileName:
   Exclude:
     - lib/rubocop-privacy.rb
