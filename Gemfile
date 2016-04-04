@@ -12,6 +12,10 @@ group :test do
   gem 'rspec', '~> 3.4', require: false
 end
 
+group :release do
+  gem 'github_changelog_generator', '~> 1.9', require: false
+end
+
 local_gemfile = 'Gemfile.local'
 if File.exist?(local_gemfile)
   eval(File.read(local_gemfile)) # rubocop:disable Lint/Eval
