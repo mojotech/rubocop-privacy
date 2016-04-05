@@ -1,6 +1,6 @@
 # RuboCop Privacy
 
-Vertical alignment analysis for Ruby files.
+Vertical alignment and privacy declaration analysis for Ruby files.
 
 ## Installation
 
