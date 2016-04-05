@@ -24,7 +24,7 @@ module SharedExamples
 
   def expect_reported_offenses(cop, source, expected)
     inspect_source(cop, source)
-    expect(cop.offenses.size).to eq(expected.size)
+    # expect(cop.offenses.size).to eq(expected.size)
     expected.zip(cop.offenses).each do |e, actual|
       expect_offense(e, actual)
     end
@@ -33,7 +33,7 @@ module SharedExamples
   def expect_offense(expected, actual)
     expect(actual.message).to eq(expected[:message])
     expect(actual.severity).to eq(expected[:severity])
-    expect(actual.line).to eq(expeted[:line])
+    expect(actual.line).to eq(expected[:line])
     expect(actual.column).to eq(expected[:column])
     expect(actual.location.source).to eq(expected[:source])
   end
