@@ -8,6 +8,9 @@ Metrics/AbcSize:
   Exclude:
     - spec/**/*
 
+Metrics/LineLength:
+  Max: 120
+
 Style/Documentation:
   Exclude:
     - spec/**/*
