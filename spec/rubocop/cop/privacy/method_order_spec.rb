@@ -17,17 +17,18 @@ describe RuboCop::Cop::Privacy::MethodOrder do
     end
     let(:expected_offenses) do
       [{
-         message: 'Public access modifier should never be redeclared.',
-         severity: :convention,
-         line: 4,
-         column: 2,
-         source: 'public'
-       }]
+        message: 'Public access modifier should never be redeclared.',
+        severity: :convention,
+        line: 4,
+        column: 2,
+        source: 'public'
+      }]
     end
     include_examples 'reports offenses'
   end
 
-  context 'only use access modifiers once per file when using "group" level configuration' # TODO: based on config option of 'group'
+  # TODO: based on config option of 'group'
+  context 'only use access modifiers once per file when using "group" level configuration'
 
   context 'when no methods are out of order' do
     context 'with group level privacy' do
@@ -137,7 +138,7 @@ describe RuboCop::Cop::Privacy::MethodOrder do
       end
       let(:expected_offenses) do
         [{
-          message: '`protected` method out of order',
+          message: '`protected` access modifier out of order.',
           severity: :convention,
           line: 10,
           column: 2,
@@ -184,7 +185,7 @@ describe RuboCop::Cop::Privacy::MethodOrder do
       end
       let(:expected_offenses) do
         [{
-          message: '`protected` method out of order',
+          message: '`protected` method out of order.',
           severity: :convention,
           line: 11,
           column: 2,
@@ -229,7 +230,7 @@ describe RuboCop::Cop::Privacy::MethodOrder do
       end
       let(:expected_offenses) do
         [{
-          message: '`protected` method out of order',
+          message: '`protected` method out of order.',
           severity: :convention,
           line: 8,
           column: 2,
