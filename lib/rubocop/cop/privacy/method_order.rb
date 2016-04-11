@@ -20,20 +20,20 @@ module RuboCop
           when :protected
             check_protected(node)
           when :public
-            add_offense(node, node.source_range, 'Public should never be redeclared.')
+            add_offense(node, node.source_range, 'Public access modifier should never be redeclared.')
           end
         end
 
         private def check_private(node)
           if @private_opened
-            add_offense(node, node.source_range, 'Private should only be declared once.')
+            add_offense(node, node.source_range, 'Private access modifier should only be declared once.')
           end
           @private_opened = true
         end
 
         private def check_protected(node)
           if @protected_opened
-            add_offense(node, node.source_range, 'Protected should only be declared once.')
+            add_offense(node, node.source_range, 'Protected access modifier should only be declared once.')
           end
           @protected_opened = true
 

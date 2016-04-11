@@ -3,6 +3,32 @@ describe RuboCop::Cop::Privacy::MethodOrder do
 
   subject(:cop) { described_class.new }
 
+  context 'do not reopen public' do
+    let(:source) do
+      [
+        'class Foo',
+        '  def bar',
+        '  end',
+        '  public',
+        '  def baz',
+        '  end',
+        'end'
+      ]
+    end
+    let(:expected_offenses) do
+      [{
+         message: 'Public access modifier should never be redeclared.',
+         severity: :convention,
+         line: 4,
+         column: 2,
+         source: 'public'
+       }]
+    end
+    include_examples 'reports offenses'
+  end
+
+  context 'only use access modifiers once per file when using "group" level configuration' # TODO: based on config option of 'group'
+
   context 'when no methods are out of order' do
     context 'with group level privacy' do
       let(:source) do
